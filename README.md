@@ -1,2 +1,2 @@
-<hi>Link in description<hi/>
+<h1>Link in About<h1/>
 
