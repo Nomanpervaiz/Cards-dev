@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+input{
+  border: 2px solid grey ;
+  outline: none;
+  display: block;
+  margin: 10px  auto;
+  border-radius: 10px ;
+  padding: 8px 20px ;
+  width: 30%;
+  background-color: rgba(137, 43, 226, 0.103);
+}
+
+button{
+  border: 2px solid grey ;
+  color: white;
+  background-color: blueviolet;
+  outline: none;
+  display: block;
+  margin: 10px  auto;
+  border-radius: 10px ;
+  padding: 8px 0px ;
+  width: 10%;
+}
+.inputDiv{
+  border-bottom: 2px solid rgb(230, 230, 230);
+}
