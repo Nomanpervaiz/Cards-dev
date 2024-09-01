@@ -5,21 +5,26 @@ function App() {
   const [text, setText] = useState("");
   const [color, setColor] = useState("");
   const [BackGroundColor, setBackGroundColor] = useState("");
-  const [array, setArray] = useState([])
-
+  const [array, setArray] = useState([]);
 
   const createCard = () => {
-    setArray([...array, {
-      text: text,
-      color: color,
-      bgColor: BackGroundColor
-    }
-  ])
-  setText("")
-  setColor("")
-  setBackGroundColor("")
-  }
+    setArray([
+      ...array,
+      {
+        text: text,
+        color: color,
+        bgColor: BackGroundColor,
+        createdAt: Date.now(),
+      },
+    ]);
+    setText("");
+    setColor("");
+    setBackGroundColor("");
+  };
 
+  const onRemove = (createdAt) => {
+    setArray(array.filter((val) => val.createdAt !== createdAt));
+  };
 
   return (
     <>
@@ -39,12 +44,12 @@ function App() {
         <input
           value={BackGroundColor}
           type="text"
-          placeholder="Enter your backgroundcolor"
+          placeholder="Enter your background color"
           onChange={(e) => setBackGroundColor(e.target.value)}
         />
         <button onClick={createCard}>Add New Card</button>
       </div>
-      <Cards array={array} />
+      <Cards removeCard={onRemove} array={array} />
     </>
   );
 }
